@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Condicion{% endblock %}
+
+{% block body %}
+    <h1>Edit Condicion</h1>
+
+    {{ include('condicion/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_condicion_index') }}">back to list</a>
+
+    {{ include('condicion/_delete_form.html.twig') }}
+{% endblock %}

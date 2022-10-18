@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Condicion{% endblock %}
+
+{% block body %}
+    <h1>Condicion</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ condicion.id }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ condicion.descripcion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_condicion_index') }}">back to list</a>
+
+    <a href="{{ path('app_condicion_edit', {'id': condicion.id}) }}">edit</a>
+
+    {{ include('condicion/_delete_form.html.twig') }}
+{% endblock %}
