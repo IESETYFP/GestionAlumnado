@@ -3,9 +3,10 @@
 {% block title %}Condicion index{% endblock %}
 
 {% block body %}
-    <h1>Condicion index</h1>
-
-    <table class="table">
+    <h1></h1>
+<div class="container">
+ <h2 style="text-align:left">Condicion</h2>
+    <table  class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -19,8 +20,8 @@
                 <td>{{ condicion.id }}</td>
                 <td>{{ condicion.descripcion }}</td>
                 <td>
-                    <a href="{{ path('app_condicion_show', {'id': condicion.id}) }}">show</a>
-                    <a href="{{ path('app_condicion_edit', {'id': condicion.id}) }}">edit</a>
+                    <a href="{{ path('app_condicion_show', {'id': condicion.id}) }}" class="btn btn-info">show</a>
+                    <a href="{{ path('app_condicion_edit', {'id': condicion.id}) }}" class="btn btn-warning">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -30,6 +31,8 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('app_condicion_new') }}">Create new</a>
+</div>
+<div class="container">
+    <a href="{{ path('app_condicion_new') }}" class="btn btn-success">Nuevo</a>
+</div>
 {% endblock %}
