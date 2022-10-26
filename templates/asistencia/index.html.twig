@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Asistencia index{% endblock %}
+
+{% block body %}
+    <h1>Asistencia index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Cantasistencia</th>
+                <th>Reintegrado</th>
+                <th>Turno</th>
+                <th>Evento</th>
+                <th>Condicion</th>
+                <th>Horaasistencia</th>
+                <th>Fechaasistencia</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for asistencium in asistencias %}
+            <tr>
+                <td>{{ asistencium.id }}</td>
+                <td>{{ asistencium.cantasistencia }}</td>
+                <td>{{ asistencium.reintegrado }}</td>
+                <td>{{ asistencium.turno }}</td>
+                <td>{{ asistencium.evento }}</td>
+                <td>{{ asistencium.condicion }}</td>
+                <td>{{ asistencium.horaasistencia }}</td>
+                <td>{{ asistencium.fechaasistencia }}</td>
+                <td>
+                    <a href="{{ path('app_asistencia_show', {'id': asistencium.id}) }}">show</a>
+                    <a href="{{ path('app_asistencia_edit', {'id': asistencium.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_asistencia_new') }}">Create new</a>
+{% endblock %}

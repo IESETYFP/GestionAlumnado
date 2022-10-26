@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alumno index{% endblock %}
+
+{% block body %}
+    <h1>Alumno index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tutores</th>
+                <th>Dni_a</th>
+                <th>Legajo_a</th>
+                <th>Nombres_a</th>
+                <th>Apellidos_a</th>
+                <th>Tel_a</th>
+                <th>Direccion_a</th>
+                <th>Cuil</th>
+                <th>Copiadni_a</th>
+                <th>Fechanacimiento_a</th>
+                <th>Lugarnacimiento_a</th>
+                <th>Codigopostal_a</th>
+                <th>Certificadovacuna_a</th>
+                <th>Electrocardiograma_a</th>
+                <th>Certificadoaptitudfisica_a</th>
+                <th>Certificadobuenasalud_a</th>
+                <th>Cap</th>
+                <th>Genero</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for alumno in alumnos %}
+            <tr>
+                <td>{{ alumno.id }}</td>
+                <td>{{ alumno.tutores }}</td>
+                <td>{{ alumno.dniA }}</td>
+                <td>{{ alumno.legajoA }}</td>
+                <td>{{ alumno.nombresA }}</td>
+                <td>{{ alumno.apellidosA }}</td>
+                <td>{{ alumno.telA }}</td>
+                <td>{{ alumno.direccionA }}</td>
+                <td>{{ alumno.cuil }}</td>
+                <td>{{ alumno.copiadniA }}</td>
+                <td>{{ alumno.fechanacimientoA }}</td>
+                <td>{{ alumno.lugarnacimientoA }}</td>
+                <td>{{ alumno.codigopostalA }}</td>
+                <td>{{ alumno.certificadovacunaA }}</td>
+                <td>{{ alumno.electrocardiogramaA }}</td>
+                <td>{{ alumno.certificadoaptitudfisicaA }}</td>
+                <td>{{ alumno.certificadobuenasaludA }}</td>
+                <td>{{ alumno.cap }}</td>
+                <td>{{ alumno.genero }}</td>
+                <td>
+                    <a href="{{ path('app_alumno_show', {'id': alumno.id}) }}">show</a>
+                    <a href="{{ path('app_alumno_edit', {'id': alumno.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="20">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_alumno_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alumno{% endblock %}
+
+{% block body %}
+    <h1>Alumno</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ alumno.id }}</td>
+            </tr>
+            <tr>
+                <th>Tutores</th>
+                <td>{{ alumno.tutores }}</td>
+            </tr>
+            <tr>
+                <th>Dni_a</th>
+                <td>{{ alumno.dniA }}</td>
+            </tr>
+            <tr>
+                <th>Legajo_a</th>
+                <td>{{ alumno.legajoA }}</td>
+            </tr>
+            <tr>
+                <th>Nombres_a</th>
+                <td>{{ alumno.nombresA }}</td>
+            </tr>
+            <tr>
+                <th>Apellidos_a</th>
+                <td>{{ alumno.apellidosA }}</td>
+            </tr>
+            <tr>
+                <th>Tel_a</th>
+                <td>{{ alumno.telA }}</td>
+            </tr>
+            <tr>
+                <th>Direccion_a</th>
+                <td>{{ alumno.direccionA }}</td>
+            </tr>
+            <tr>
+                <th>Cuil</th>
+                <td>{{ alumno.cuil }}</td>
+            </tr>
+            <tr>
+                <th>Copiadni_a</th>
+                <td>{{ alumno.copiadniA }}</td>
+            </tr>
+            <tr>
+                <th>Fechanacimiento_a</th>
+                <td>{{ alumno.fechanacimientoA }}</td>
+            </tr>
+            <tr>
+                <th>Lugarnacimiento_a</th>
+                <td>{{ alumno.lugarnacimientoA }}</td>
+            </tr>
+            <tr>
+                <th>Codigopostal_a</th>
+                <td>{{ alumno.codigopostalA }}</td>
+            </tr>
+            <tr>
+                <th>Certificadovacuna_a</th>
+                <td>{{ alumno.certificadovacunaA }}</td>
+            </tr>
+            <tr>
+                <th>Electrocardiograma_a</th>
+                <td>{{ alumno.electrocardiogramaA }}</td>
+            </tr>
+            <tr>
+                <th>Certificadoaptitudfisica_a</th>
+                <td>{{ alumno.certificadoaptitudfisicaA }}</td>
+            </tr>
+            <tr>
+                <th>Certificadobuenasalud_a</th>
+                <td>{{ alumno.certificadobuenasaludA }}</td>
+            </tr>
+            <tr>
+                <th>Cap</th>
+                <td>{{ alumno.cap }}</td>
+            </tr>
+            <tr>
+                <th>Genero</th>
+                <td>{{ alumno.genero }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_alumno_index') }}">back to list</a>
+
+    <a href="{{ path('app_alumno_edit', {'id': alumno.id}) }}">edit</a>
+
+    {{ include('alumno/_delete_form.html.twig') }}
+{% endblock %}

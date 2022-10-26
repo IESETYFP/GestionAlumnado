@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Asistencia{% endblock %}
+
+{% block body %}
+    <h1>Asistencia</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ asistencium.id }}</td>
+            </tr>
+            <tr>
+                <th>Cantasistencia</th>
+                <td>{{ asistencium.cantasistencia }}</td>
+            </tr>
+            <tr>
+                <th>Reintegrado</th>
+                <td>{{ asistencium.reintegrado }}</td>
+            </tr>
+            <tr>
+                <th>Turno</th>
+                <td>{{ asistencium.turno }}</td>
+            </tr>
+            <tr>
+                <th>Evento</th>
+                <td>{{ asistencium.evento }}</td>
+            </tr>
+            <tr>
+                <th>Condicion</th>
+                <td>{{ asistencium.condicion }}</td>
+            </tr>
+            <tr>
+                <th>Horaasistencia</th>
+                <td>{{ asistencium.horaasistencia }}</td>
+            </tr>
+            <tr>
+                <th>Fechaasistencia</th>
+                <td>{{ asistencium.fechaasistencia }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_asistencia_index') }}">back to list</a>
+
+    <a href="{{ path('app_asistencia_edit', {'id': asistencium.id}) }}">edit</a>
+
+    {{ include('asistencia/_delete_form.html.twig') }}
+{% endblock %}
